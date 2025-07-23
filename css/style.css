@@ -1,0 +1,406 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f172a;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111827;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Hero Section with Avatar */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 8%;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  max-width: 600px;
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glow-circle {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ff00);
+  padding: 10px;
+  animation: glow 5s infinite linear;
+}
+
+.glow-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 10px #0ff) drop-shadow(0 0 20px #f0f);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px #0f0) drop-shadow(0 0 40px #ff0);
+  }
+  100% {
+    filter: drop-shadow(0 0 10px #0ff) drop-shadow(0 0 20px #f0f);
+  }
+}
+
+.hero-content h3 {
+  font-size: 1.2rem;
+  color: #38bdf8;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-content h2 {
+  font-size: 1.8rem;
+}
+
+.typing {
+  color: #38bdf8;
+}
+
+.hero-content p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+.socials {
+  margin-top: 1.5rem;
+}
+
+.socials a {
+  color: #38bdf8;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: #0ea5e9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.about {
+  background-color: #1e293b;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #e2e8f0;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #38bdf8;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Fullscreen About Section */
+.about.full-page {
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 1;
+  color: #e2e8f0;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-visual {
+  flex: 1;
+  text-align: center;
+}
+
+.about-visual img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.about-visual img:hover {
+  transform: scale(1.05);
+}
+
+.connect-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.6rem;
+  background: #0077b5;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.connect-btn:hover {
+  background: #005a8c;
+  transform: scale(1.05);
+}
+
+/* Modern Gradient Heading */
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+.highlight-me {
+  background: linear-gradient(to right, #f72585, #7209b7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.highlight-me::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: linear-gradient(to right, #f72585, #7209b7);
+  border-radius: 50% 50% 0 0;
+  z-index: -1;
+  transform: rotate(-3deg);
+}
+
+/* === PROJECTS SECTION === */
+.projects-section {
+  background-color: #1e293b;
+  color: white;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.project-card {
+  background-color: white;
+  color: #1e293b;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.project-card a:hover {
+  background-color: #1d4ed8;
+}
+
+/* Contact Section */
+#contact {
+  background-color: #1e293b;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: 100vh;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-bottom: 40px;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+#contact-form {
+  max-width: 500px;
+  margin: auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.8rem 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#contact-form button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Footer */
+footer {
+  background-color: #0f172a;
+  color: white;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #60a5fa;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* === Layout Fix for Contact Section and Footer === */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper {
+  flex: 1;
+  padding: 20px;
+}
