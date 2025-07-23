@@ -404,3 +404,49 @@ html, body {
   flex: 1;
   padding: 20px;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1rem;
+    text-align: center;
+  }
+  .hero-content {
+    max-width: 100%;
+    flex: unset;
+  }
+  .hero-image {
+    margin-top: 1.5rem;
+    flex: unset;
+  }
+  .glow-circle {
+    width: 220px;
+    height: 220px;
+    padding: 6px;
+  }
+  .about.full-page {
+    flex-direction: column;
+    padding: 2.5rem 1rem;
+  }
+  .about-container {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 0;
+  }
+  .about-visual img {
+    max-width: 250px;
+  }
+  .projects-grid {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .project-card {
+    max-width: 100%;
+  }
+  #contact {
+    padding: 2rem 1rem;
+    min-height: unset;
+    max-height: unset;
+  }
+}
