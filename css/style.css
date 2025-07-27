@@ -1,25 +1,62 @@
+/* CSS Variables for Theme */
+:root {
+  /* Dark Theme (Default) */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-nav: #111827;
+  --text-primary: #fff;
+  --text-secondary: #e2e8f0;
+  --text-muted: #cbd5e1;
+  --accent-color: #38bdf8;
+  --accent-hover: #0ea5e9;
+  --card-bg: white;
+  --card-text: #1e293b;
+  --shadow: rgba(0,0,0,0.2);
+  --glow-color: #0ff;
+}
+
+[data-theme="light"] {
+  /* Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-nav: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+  --card-bg: #ffffff;
+  --card-text: #1e293b;
+  --shadow: rgba(0,0,0,0.1);
+  --glow-color: #2563eb;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #0f172a;
-  color: #fff;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #111827;
+  background: var(--bg-nav);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 10px var(--shadow);
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #fff;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .nav-links {
@@ -29,9 +66,47 @@ nav {
 }
 
 .nav-links li a {
-  color: #38bdf8;
+  color: var(--accent-color);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--accent-hover);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+}
+
+#theme-toggle-btn {
+  background: none;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+#theme-toggle-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-primary);
+  transform: scale(1.1);
+}
+
+#theme-toggle-btn:active {
+  transform: scale(0.95);
 }
 
 /* Hero Section with Avatar */
@@ -42,6 +117,8 @@ nav {
   padding: 4rem 8%;
   gap: 1.5rem;
   flex-wrap: wrap;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
 }
 
 .hero-content {
@@ -60,9 +137,10 @@ nav {
   width: 360px;
   height: 360px;
   border-radius: 50%;
-  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ff00);
+  background: linear-gradient(45deg, var(--glow-color), #ff00ff, #00ff00);
   padding: 10px;
   animation: glow 5s infinite linear;
+  transition: all 0.3s ease;
 }
 
 .glow-circle img {
@@ -75,39 +153,46 @@ nav {
 
 @keyframes glow {
   0% {
-    filter: drop-shadow(0 0 10px #0ff) drop-shadow(0 0 20px #f0f);
+    filter: drop-shadow(0 0 10px var(--glow-color)) drop-shadow(0 0 20px #f0f);
   }
   50% {
     filter: drop-shadow(0 0 20px #0f0) drop-shadow(0 0 40px #ff0);
   }
   100% {
-    filter: drop-shadow(0 0 10px #0ff) drop-shadow(0 0 20px #f0f);
+    filter: drop-shadow(0 0 10px var(--glow-color)) drop-shadow(0 0 20px #f0f);
   }
 }
 
 .hero-content h3 {
   font-size: 1.2rem;
-  color: #38bdf8;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
 }
 
 .hero-content h1 {
   font-size: 3rem;
   font-weight: bold;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .hero-content h2 {
   font-size: 1.8rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .typing {
-  color: #38bdf8;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
 }
 
 .hero-content p {
   margin-top: 1rem;
   font-size: 1rem;
   line-height: 1.5;
-  color: #cbd5e1;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
 }
 
 .socials {
@@ -115,14 +200,14 @@ nav {
 }
 
 .socials a {
-  color: #38bdf8;
+  color: var(--accent-color);
   font-size: 1.5rem;
   margin: 0 0.5rem;
   transition: 0.3s;
 }
 
 .socials a:hover {
-  color: #0ea5e9;
+  color: var(--accent-hover);
 }
 
 html {
@@ -130,10 +215,11 @@ html {
 }
 
 .about {
-  background-color: #1e293b;
+  background-color: var(--bg-secondary);
   padding: 4rem 2rem;
   text-align: center;
-  color: #e2e8f0;
+  color: var(--text-secondary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .about-content {
@@ -144,23 +230,27 @@ html {
 .about h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #38bdf8;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
 }
 
 .about p {
   font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 1rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 /* Fullscreen About Section */
 .about.full-page {
   min-height: 100vh;
   padding: 5rem 2rem;
-  background: #0f172a;
+  background: var(--bg-primary);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
 .about-container {
@@ -175,19 +265,23 @@ html {
 
 .about-text {
   flex: 1;
-  color: #e2e8f0;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .about-text h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #ffffff;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .about-text p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .about-visual {
@@ -201,6 +295,7 @@ html {
   border-radius: 20px;
   box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
   animation: floatUpDown 3s ease-in-out infinite;
+  transition: all 0.3s ease;
 }
 
 @keyframes floatUpDown {
@@ -268,17 +363,19 @@ html {
 
 /* === PROJECTS SECTION === */
 .projects-section {
-  background-color: #1e293b;
-  color: white;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
   padding: 4rem 2rem;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .section-title {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: white;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .projects-grid {
@@ -290,14 +387,14 @@ html {
 }
 
 .project-card {
-  background-color: white;
-  color: #1e293b;
+  background-color: var(--card-bg);
+  color: var(--card-text);
   border-radius: 1rem;
   padding: 1.5rem;
   max-width: 300px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .project-card img {
@@ -315,31 +412,35 @@ html {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1.2rem;
-  background-color: #2563eb;
+  background-color: var(--accent-color);
   color: white;
   text-decoration: none;
   border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
 .project-card a:hover {
-  background-color: #1d4ed8;
+  background-color: var(--accent-hover);
 }
 
 /* Contact Section */
 #contact {
-  background-color: #1e293b;
-  color: white;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
   padding: 4rem 2rem;
   text-align: center;
   min-height: 100vh;
   max-height: 500px;
   overflow-y: auto;
   padding-bottom: 40px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #contact h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 #contact-form {
@@ -355,10 +456,18 @@ html {
   border: none;
   border-radius: 8px;
   font-size: 1rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+  color: var(--text-muted);
 }
 
 #contact-form button {
-  background-color: #2563eb;
+  background-color: var(--accent-color);
   color: white;
   padding: 0.8rem 2rem;
   border: none;
@@ -369,26 +478,29 @@ html {
 }
 
 #contact-form button:hover {
-  background-color: #1d4ed8;
+  background-color: var(--accent-hover);
 }
 
 /* Footer */
 footer {
-  background-color: #0f172a;
-  color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   padding: 1.5rem 2rem;
   text-align: center;
   font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 footer a {
-  color: #60a5fa;
+  color: var(--accent-color);
   text-decoration: none;
   margin: 0 0.5rem;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
   text-decoration: underline;
+  color: var(--accent-hover);
 }
 
 /* === Layout Fix for Contact Section and Footer === */
@@ -448,5 +560,16 @@ html, body {
     padding: 2rem 1rem;
     min-height: unset;
     max-height: unset;
+  }
+  
+  /* Mobile responsive for theme toggle */
+  .theme-toggle {
+    margin-left: 1rem;
+  }
+  
+  #theme-toggle-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
   }
 }
